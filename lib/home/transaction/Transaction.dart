@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:new1/login_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:new1/home/transaction/Food.dart';
 import 'package:new1/home/transaction/Shopping.dart';
@@ -8,6 +8,7 @@ import 'package:new1/home/transaction/expense.dart';
 import 'package:new1/home/transaction/income.dart';
 import 'package:new1/home/navigator.dart';
 import 'package:new1/home/transaction/Entertainment.dart';
+import 'package:new1/home/transaction/others.dart';
 import '../HomePage.dart';
 
 const List<String> list1 = <String>[
@@ -113,7 +114,7 @@ class _TransactionState extends State<Transaction> {
           ),
           const buttonname(
             name: "Entertainment",
-            x: 100,
+            x: 90,
             pagex: Entertainment(),
             icon: "assets/ent.png",
             y: 20,
@@ -124,7 +125,7 @@ class _TransactionState extends State<Transaction> {
           ),
           const buttonname(
             name: "Food",
-            x: 129,
+            x: 119,
             pagex: Food(),
             icon: "assets/food.png",
             y: 20,
@@ -135,7 +136,7 @@ class _TransactionState extends State<Transaction> {
           ),
           const buttonname(
             name: "Shopping",
-            x: 115,
+            x: 105,
             pagex: Shopping(),
             icon: "assets/shop.png",
             y: 20,
@@ -146,12 +147,22 @@ class _TransactionState extends State<Transaction> {
           ),
           const buttonname(
             name: "Travel",
-            x: 125,
+            x: 115,
             pagex: Travel(),
             icon: "assets/travel.png",
             y: 20,
             z: 0.4,
           ),
+          const SizedBox(
+            height: 10,
+          ),
+          const buttonname(
+              name: "Others",
+              x: 114,
+              pagex: Others(),
+              icon: "assets/extra.png",
+              y: 20,
+              z: .2)
         ],
       ),
     );

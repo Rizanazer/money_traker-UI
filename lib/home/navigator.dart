@@ -35,7 +35,7 @@ class _navigatorState extends State<navigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black54,
       body: Center(
         child: _widgetOptions.elementAt(Index),
       ),

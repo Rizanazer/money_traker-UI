@@ -2,6 +2,9 @@
 
 import 'package:new1/home/menu/mydrawer.dart';
 import 'package:new1/home/navigator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:new1/auth/auth.dart';
+import 'package:new1/login_page.dart';
 
 import 'package:flutter/material.dart';
 
@@ -13,7 +16,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // ignore: non_constant_identifier_names
+  final User? user = Auth().currentUser;
+  Future<void> signOut() async {
+    await Auth().signOut();
+  }
+
+  // Widget _userUId() {
+  //   return Text(user?.email ?? 'User email');
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 padtext(
-                  name: "Sidharth",
+                  name: "sidharth",
                   fontsize: 12,
                   fontWeight: FontWeight.w700,
                   color: Colors.black,

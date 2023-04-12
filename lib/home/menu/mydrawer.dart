@@ -1,6 +1,8 @@
 import 'package:new1/home/menu/settings.dart';
 import 'package:new1/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:new1/auth/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 // ignore: camel_case_types
 class mydrawer extends StatefulWidget {
@@ -12,6 +14,11 @@ class mydrawer extends StatefulWidget {
 
 // ignore: camel_case_types
 class _mydrawerState extends State<mydrawer> {
+  final User? user = Auth().currentUser;
+  Future<void> signOut() async {
+    await Auth().signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -62,9 +69,7 @@ class _mydrawerState extends State<mydrawer> {
                     fontSize: 20),
               ),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const LoginPage(),
-                ));
+                signOut();
               },
             )
           ],
